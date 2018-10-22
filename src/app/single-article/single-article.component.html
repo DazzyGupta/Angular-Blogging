@@ -1,0 +1,25 @@
+<div class="article-preview">
+  <div class="article-meta">
+    <img src="{{article.author.image}}" width="100px" class="rounded-circle">
+    <div class="info">
+      <a class="username" href="profiles/{{article.author.username}}">
+        {{article.author.username}}</a>
+      <p class="date ng-binding">{{article.createdAt | date: 'longDate'}}</p>
+    </div>
+    <app-favorite-button [article] = article (toggle)="onToggleFavorite($event)"
+     class="pull-xs-right ng-scope ng-isolate-scope">
+      {{ article.favoritesCount }}
+    </app-favorite-button>
+  </div>
+  
+  <a class="link" href="article/{{article.slug}}">
+    <h5>{{article.title}}</h5>
+    <p>{{article.description}}</p>
+    <p>Read More...</p>
+  </a>
+  <ul class="tag-list">
+      <li *ngFor="let tag of article.tagList" class="tag-default tag-pill tag-outline">
+        {{ tag }}
+      </li>
+  </ul>
+</div>

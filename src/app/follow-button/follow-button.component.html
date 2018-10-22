@@ -1,0 +1,9 @@
+<button
+  class="btn btn-sm action-btn"
+  [ngClass]="{ 'btn-light': !profile.following,
+               'btn-dark': profile.following }"
+  (click)="toggleFollowing()">
+  <i class="ion-plus-round"></i>
+  &nbsp;
+  {{ profile.following ? 'Unfollow' : 'Follow' }} {{ profile.username }}
+</button>

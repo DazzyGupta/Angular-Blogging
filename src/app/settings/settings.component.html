@@ -1,0 +1,57 @@
+<div class="settings-page">
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-xs-12">
+            <form [formGroup]="settingsForm" (ngSubmit)="updateSettings()">
+            <h1 class="text-xs-center">Your Settings</h1>
+
+              <fieldset class="form-group">
+                <input class="form-control form-control-lg"
+                  formControlName="image"
+                  type="text"
+                  placeholder="URL of profile picture" />
+              </fieldset>
+  
+              <fieldset class="form-group">
+                <input class="form-control"
+                formControlName="username"
+                  type="text"
+                  placeholder="Username" required/>
+              </fieldset>
+  
+              <fieldset class="form-group">
+                <textarea class="form-control"
+                formControlName="bio"
+                  rows="8"
+                  placeholder="Short bio about you">
+                </textarea>
+              </fieldset>
+
+              <fieldset class="form-group">
+                  <input class="form-control"
+                  formControlName="email"
+                    type="text"
+                    placeholder="Email" required/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <input class="form-control"
+                    formControlName="password"
+                      type="password"
+                      placeholder="Password"/>
+                  </fieldset>
+  
+              <button class="btn btn-lg pull-xs-right btn-dark" 
+              type="submit" [disabled]="!settingsForm.valid">
+                Update Settings
+              </button>      
+          </form>     
+
+        <button class="btn btn-outline-danger"
+          (click)="logout()">
+          Or click here to logout.
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>

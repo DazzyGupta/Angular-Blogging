@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="loginCard">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <h2 class="heading">Sign in</h2>
+    <p class="account">Need an account?</p>
+      <input 
+        required autocomplete="off"
+        formControlName="email"
+        type="email" 
+        name="email" 
+        placeholder="Email"
+        class="formInput" />
+      <input required 
+        type="password" 
+        formControlName="password"
+        name="password" 
+        placeholder="Password"
+        class="formInput" />
+      <button class="btn" 
+              type="submit"
+              id="btn-login" 
+              [disabled]="!loginForm.valid">
+              Log In
+      </button>
+      </form>
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="signUpCard">
+      <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+    <h2 class="heading">Sign up</h2>
+    <p class="account">Have an account?</p>
+
+    <input 
+        name="UserName"
+        placeholder="Username" 
+        formControlName="userName" class="formInput"
+        maxlength="12" required/>
+
+       <input 
+       type="email" name="email"
+       placeholder="Email" 
+       formControlName="email" class="formInput"
+       maxlength="60" required/>
+
+      <input 
+        type="password" name="password"
+        placeholder="Password" 
+        formControlName="password" class="formInput" 
+        required/>
+
+      <button  
+              type="submit"
+              class="btn" id="btn-signUp"
+              [disabled]="!signupForm.valid">
+              Sign Up
+      </button>
+      </form>
+  </div>
+</div>
